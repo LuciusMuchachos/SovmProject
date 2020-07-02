@@ -7,7 +7,8 @@ public class MoveScript : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public static int speed = 30;
-    public static int jumpSpeed = 30;
+    public static int speedRotation = 2;
+    public static int jumpSpeed = 50000;
     void Start()
     {
         player = (GameObject)this.gameObject;
@@ -15,8 +16,6 @@ public class MoveScript : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //int speed = 50;
-        //int jumpSpeed = 50;
         Rigidbody rb = GetComponent<Rigidbody>();
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
@@ -29,10 +28,12 @@ public class MoveScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             player.transform.position -= player.transform.right * speed * Time.deltaTime;
+            player.transform.Rotate(Vector3.down * speedRotation);
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             player.transform.position += player.transform.right * speed *Time.deltaTime;
+            player.transform.Rotate(Vector3.up * speedRotation);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
