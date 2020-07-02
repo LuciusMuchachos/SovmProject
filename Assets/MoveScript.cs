@@ -15,6 +15,19 @@ public class MoveScript : MonoBehaviour
     {
         player = (GameObject)this.gameObject;
     }
+    /*private void Update()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (Input.GetKey(KeyCode.A))
+            
+        if (Input.GetKey(KeyCode.D))
+            
+        if (Input.GetKey(KeyCode.W))
+            rb.AddForce(Vector3.up);
+        if (Input.GetKey(KeyCode.S))
+            rb.AddForce(Vector3.down);
+
+    }*/
     // Update is called once per frame
     private void Update()
     {
@@ -29,11 +42,11 @@ public class MoveScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            player.transform.Rotate(Vector3.down * speedRotation);
+            player.transform.position -= player.transform.right * speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            player.transform.Rotate(Vector3.up * speedRotation);
+            player.transform.position += player.transform.right * speed * Time.deltaTime;
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
