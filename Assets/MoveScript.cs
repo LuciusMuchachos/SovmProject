@@ -16,8 +16,14 @@ public class MoveScript : MonoBehaviour
     public static int jumpSpeed = 50000;
 =======
     public static int speed = 10;
+<<<<<<< HEAD
     public static int jumpSpeed = 10;
 >>>>>>> c0bf2f56e4450198f851abd5fdf3dfbe7930c2a9
+||||||| c0bf2f5
+    public static int jumpSpeed = 10;
+=======
+    public static int jumpSpeed = 100;
+>>>>>>> origin/MaksikDurik
     void Start()
     {
         player = (GameObject)this.gameObject;
