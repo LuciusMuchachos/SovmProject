@@ -8,8 +8,6 @@ public class MoveScript : MonoBehaviour
     public GameObject player;
     public int speed = 5;
     public int speedRotation = 3;
-    public AnimationClip anima;
-    public AnimationClip anima2;
     public int jumpSpeed = 50;
     void Start()
     {
