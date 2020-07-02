@@ -7,7 +7,7 @@ public class MoveScript : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public static int speed = 10;
-    public static int jumpSpeed = 10;
+    public static int jumpSpeed = 100;
     void Start()
     {
         player = (GameObject)this.gameObject;
